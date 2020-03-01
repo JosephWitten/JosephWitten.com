@@ -1,0 +1,11 @@
+
+body {
+    background-color: #2C2F33;
+    background-image: linear-gradient(to bottom right, #2C2F33, #3a475c);
+}
+
+.font {
+    color: white;
+    text-align: center;
+    font-family: 'Spartan', monospace;
+}
