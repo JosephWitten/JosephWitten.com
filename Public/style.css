@@ -21,8 +21,15 @@ body {
     
 }
 
+.Footer {
+    color: #b3b3b3;
+    font-size: 2vw;
+    top: 2vh;
+    
+}
+
 /* This is the "main" tag for desktops, when screen is more than 700 */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
     .main {
         position: relative;
         width: 40%;
@@ -30,18 +37,16 @@ body {
         text-align: center;
         font-family: "Spartan", monospace;
         font-size: 1vw;
-        
+    }
+
+    .Footer {
+        color: #b3b3b3;
+        font-size: 0.75vw;
+        top: 2vh;   
     }
 }
 
 
-
-.footer {
-    color: #b3b3b3;
-    font-size: 0.75vw;
-    top: 2vh;
-    
-}
 
 a.white:link {
     color: white;
