@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
         <title>Joseph Witten - XSS</title>
-        <script src="./XSS.js"></script>
+        <script type="text/javascript" src="./XSS.js" async></script>
     </head>
 <!-- Body-->
     <body>
@@ -16,7 +16,7 @@
         <p class="font">This is a page where you can freely test your XSS payloads.</p>
         <p class="font">|| PAGE UNDER CONSTRUCTION ||</p>
 
-        <form onsubmit="submit();return false;">
+        <form id="form">
             <label for="input" class="font">Payload:</label><br>
             <input type="text" id="input" name="input"><br><br>
             <input type="submit" value="Submit">
