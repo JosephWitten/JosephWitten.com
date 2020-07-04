@@ -3,15 +3,15 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
         <title>Joseph Witten</title>
     </head>
 
-    <body onload="start()">
+    <body onresize="sizeChange()">
         
-    <div class="main">
-        <div class="background" id="background"></div>
-            <div>
+    <canvas class="background" id="background" ></canvas>
+        <div class="main"  >
+            <div >
                 <h1 id="title" class="title font">Joseph Witten</h1>
                 <div class="flexContainer">
                     <h6 class="genTitle font">Generations taken:  
@@ -27,39 +27,22 @@
             </div>
             <div class="">
                 <br>
-                <span class="font"> This website is under construction, this is not the final version</span>
             </div>
-            <div class="dividerWhite">&nbsp;</div>
             <div>
 
                 <p class="font">
                     <u>Contact me</u><br>
                     Email: Contact@JosephWitten.com<br>
                     Alternate Email: JoeWitten49@Gmail.com<br>
-                    <br>
-                    <u>External links</u><br>
-                    GitHub:<a class="font" href="https://github.com/JosephWitten">Joseph Witten</a><br>
+                    GitHub: Joseph Witten<br>
 
                 </p>
 
             </div>
 
-            <script src="Genetic.js"></script>
+            <script src="Genetic.js" async ></script>
+            <script src = "backgroundV2.js"></script>
+            <script>startThingy()</script>
         </body>
-        <footer>
-            <div class="divider">&nbsp;</div>
-            <p class="font Footer">
-                <a href="Copyright.html" class="foot">© Copyright policy</a> | 
-                <a href="index.html" class="foot">Home</a> | 
-                <a href="AboutMe.html" class="foot">Who am I?</a>
-
-                </p>
-        </footer>
-    </div>
-    <div class="sideBar" id="slide"> 
-        <div class="tools"><h3>Tools</h3></div>
-        <a href="XSS.html" class="button">XSS</a>
-        <a href="./EconTools/lorenz.html" class="button">Lorenz curve generator</a>
-        <div ></div>
     </div>
 </html>

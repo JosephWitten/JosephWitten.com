@@ -14,14 +14,14 @@ let population = []
 let fitness = []
 let counter = 0
 
-async function start() {
+window.onload = async function() {
     population = createPopulation(300);
     // console.log("INIT POP")
     // console.log(population)
 
     continuous:
     while(true) {
-
+        
     fitness = getFitness(population);
     // console.log("FITNESS")
     // console.log(fitness)
@@ -34,7 +34,6 @@ async function start() {
     mutate(population, 2);
     
     GeneticTitle()
-    background()
     document.getElementById("generation").innerHTML = counter
 
     await sleep(10)
@@ -48,7 +47,6 @@ async function start() {
         // console.log(indexOfWord)
         // console.log(population[indexOfWord])
         document.getElementById("title").innerHTML = population[indexOfWord]
-        console.log(counter)
         break continuous;
     }
 
@@ -68,20 +66,6 @@ function GeneticTitle() {
     
 }
 
-function background() {
-    backgroundID = document.getElementById("background")
-    firstFewofPop = []
-    firstFewofFit = []
-    for (let i = 0; i < 10; i++) {
-        firstFewofPop.push(population[i])
-        firstFewofFit.push(fitness[i])
-    }
-    backgroundID.innerHTML += "<br /><strong>Population: </strong>"
-    backgroundID.innerHTML += firstFewofPop
-    backgroundID.innerHTML += "<br /><strong>Fitness: </strong>"
-    backgroundID.innerHTML += firstFewofFit
-    
-}
 
 
 function createPopulation(amount) {6
@@ -130,7 +114,7 @@ function getMatingPool(fitness) {
 
 function selectAndBreed(matingPool) {
     if (Math.max(matingPool) == 0) {
-        console.log("EMPTY MATING POOL")
+        // console.log("EMPTY MATING POOL")
         matingPool.push(population[Math.floor(Math.random() * population.length)])
     }
     newPop = []
