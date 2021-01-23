@@ -1,21 +1,41 @@
 const fs = require("fs");
-const app = require("./app");
 const https = require("https");
 const express = require("express");
-const http = express();
+const path = require("path");
+const app = express();
 
-http.get("*", (req, res) => {
-    res.redirect("https://" + req.headers.host + req.url);
+app.use(function (req, res, next) {
+	if (req.secure) {
+		return next()
+	} else {
+
+	let target = 'https://' + req.hostname + req.url
+		res.redirect(301, target)
+	}
 });
-http.listen(80, () => {
+
+app.use(express.static(__dirname + "/Public"));
+
+
+
+app.get("*", (req, res) => {
+	console.log("hit")
+	res.sendFile(path.join(__dirname, "/Public/index.html"));
+});
+
+app.listen(80, () => {
     console.log("Http server is up on port 80");
 })
 
 
+
+
 https.createServer({
-    key: fs.readFileSync("/home/pi/Server/SSL/domain.key"),
-    cert: fs.readFileSync("/home/pi/Server/SSL/josephwitten.com.crt")
+    key: fs.readFileSync(__dirname + "/SSL/domain.key"),
+    cert: fs.readFileSync(__dirname + "/SSL/josephwitten.com.crt")
 }, app).listen(443, () => {
     console.log("The HTTPS is running too!")
+
 })
+
 
